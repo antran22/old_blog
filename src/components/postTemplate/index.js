@@ -1,9 +1,20 @@
 import React from "react"
 import Layout from "../layout"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import SEO from "../seo"
 import NavBar from "./navbar"
 import style from "./style.module.css"
+
+function SeriesLink({ context }) {
+    if (context.series)
+        return (
+            <i>
+                This post is a part of{" "}
+                <Link to={context.series}>this series</Link>
+            </i>
+        )
+    return <div />
+}
 
 export default function Template({ data, pageContext }) {
     const { markdownRemark: post } = data
@@ -20,6 +31,9 @@ export default function Template({ data, pageContext }) {
                     <h1>{post.frontmatter.title}</h1>
                     <i>{time.toDateString()}</i>
                 </div>
+                <SeriesLink context={pageContext} />
+                <br/>
+                <br/>
                 <hr />
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
                 <hr />

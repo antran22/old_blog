@@ -12,9 +12,23 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
         })
     }
 }
+
+function depth(str) {
+    let cnt = 0
+    for (let char of str) {
+        if (char === "/") cnt++
+    }
+    return cnt - 1
+}
+
 exports.createPages = ({ actions, graphql }) => {
     const { createPage } = actions
-    const blogPostTemplate = path.resolve(`src/components/post-template/index.js`)
+    const blogPostTemplate = path.resolve(
+        `src/components/postTemplate/index.js`
+    )
+    const seriesPageTemplate = path.resolve(
+        `src/components/seriesTemplate/index.js`
+    )
     return graphql(`
         {
             allMarkdownRemark(
@@ -23,15 +37,17 @@ exports.createPages = ({ actions, graphql }) => {
             ) {
                 edges {
                     node {
-                        html
-                        id
                         frontmatter {
-                            date
                             title
+                            date
                             description
+                            keyword
                         }
                         fields {
                             slug
+                            readingTime {
+                                text
+                            }
                         }
                     }
                 }
@@ -41,17 +57,37 @@ exports.createPages = ({ actions, graphql }) => {
         if (result["errors"]) {
             return Promise.reject(result["errors"])
         }
-        const postList = result.data["allMarkdownRemark"]["edges"];
+        const postList = result.data["allMarkdownRemark"]["edges"]
+        const seriesList = {}
         postList.forEach(({ node }, index) => {
-            const older = index === postList.length - 1 ? null : postList[index + 1].node
+            const older =
+                index === postList.length - 1 ? null : postList[index + 1].node
             const newer = index === 0 ? null : postList[index - 1].node
+            const context = {
+                older,
+                newer,
+            }
+            if (depth(node.fields["slug"]) === 2) {
+                const seriesName = node.fields["slug"].split("/")[1]
+                if (!seriesList[seriesName]) {
+                    seriesList[seriesName] = [node]
+                } else {
+                    seriesList[seriesName].push(node)
+                }
+                context["series"] = seriesName
+            }
             createPage({
                 path: node.fields["slug"],
                 component: blogPostTemplate,
-                context: {
-                    older,
-                    newer
-                },
+                context,
+            })
+        })
+        const seriesKey = Object.keys(seriesList)
+        seriesKey.forEach(s => {
+            createPage({
+                path: `/${s}/`,
+                component: seriesPageTemplate,
+                context: { postList: seriesList[s], name: s },
             })
         })
     })
