@@ -125,6 +125,6 @@ Decrypting the message will give you the key:
 TKKFO-AEVZU-NINHD-LKDMF-KRUPP
 ``` 
 
-Don't bother trying to use my key. They generate a unique key for every user, so my key will be invalid on your machine. 
+Don't bother trying to use my  key. They generate a unique key for every user, so my key will be invalid on your machine. 
 
 Input the key, and they will lead you to the sign up page. Complete the form to create your own account.
