@@ -1,22 +1,21 @@
-import React from "react"
-import Layout from "../layout"
-import style from "../../pages/index.module.css"
-import { Link } from "gatsby"
-import TagList from "../tagList"
+import React from 'react';
+import Layout from '../layout';
+import style from './style.module.css';
+import { Link } from 'gatsby';
+import TagList from '../tagList';
 
 const PageEntry = ({ post }) => {
-    console.log(post)
-    const { title, keyword, date, description } = post.frontmatter
+    const { title, keyword, date, description } = post.frontmatter;
     return (
         <>
-            <div className={style["blogPostPreview"]}>
+            <div className={style['blogPostPreview']}>
                 <h2>
-                    <Link to={post.fields["slug"]}>{title}</Link>
+                    <Link to={post.fields['slug']}>{title}</Link>
                 </h2>
                 <i>
                     {new Date(date).toDateString()}
-                    {" • "}
-                    {post.fields.readingTime.text}
+                    {' • '}
+                    {post["fields"]["readingTime"]["text"]}
                 </i>
                 <br />
                 <br />
@@ -27,8 +26,8 @@ const PageEntry = ({ post }) => {
             </div>
             <hr />
         </>
-    )
-}
+    );
+};
 
 export default function Template({ pageContext }) {
     return (
@@ -36,10 +35,10 @@ export default function Template({ pageContext }) {
             <Layout>
                 <h1>The {pageContext.name} series</h1>
                 <hr />
-                {pageContext.postList.map((post, id)=> (
+                {pageContext.postList.map((post, id) => (
                     <PageEntry post={post} key={id} />
                 ))}
             </Layout>
         </>
-    )
+    );
 }

@@ -1,10 +1,10 @@
-import React from "react"
-import { Avatar } from "antd"
-import SEO from "../components/seo"
-import Layout from "../components/layout"
-import avatar from "../images/avatar.jpg"
-import style from "./about.module.css"
-import Credit from "../components/info/credit"
+import React from "react";
+import { Avatar } from "antd";
+import SEO from "../components/seo";
+import Layout from "../components/layout";
+import avatar from "../images/avatar.jpg";
+import style from "./about.module.css";
+import Credit from "../components/info/credit";
 
 const AboutPage = () => {
     return (
@@ -27,22 +27,25 @@ const AboutPage = () => {
                     className={style.avatar + " " + style.block}
                 />
                 <div className={style.bio + " " + style.block}>
-                    <h2>Bio:</h2>
+                    <h2>Trần Công Việt An</h2>
                     <ul>
                         <li>
-                            <h4>Real Name: Trần Công Việt An</h4>
+                            <h4>Gender: 👱‍</h4>
                         </li>
                         <li>
-                            <h4>DOB: 22/02/2001</h4>
+                            <h4>Sign: ♓️</h4>
                         </li>
                         <li>
-                            <h4>High School: HNUE Specialized High School</h4>
+                            <h4>🗓: 22/02/2001</h4>
                         </li>
                         <li>
-                            <h4>
-                                Current Occupation: Part-time Mentor at Mindx
-                                Education
-                            </h4>
+                            <h4>✉️: vietanisme@gmail.com</h4>
+                        </li>
+                        <li>
+                            <h4>📞: +84 85 527 6631</h4>
+                        </li>
+                        <li>
+                            <h4>🏠: Hanoi, Vietnam</h4>
                         </li>
                     </ul>
                 </div>
@@ -61,16 +64,24 @@ const AboutPage = () => {
                     </ul>
                 </div>
                 <div className={style.block}>
-                    <h2>Favourite Musician</h2>
+                    <h2>Favourite albums 📀</h2>
                     <ul>
                         <li>
-                            <h4>The Beatles</h4>
+                            <h4>Revolver {" • "} The Beatles</h4>
                         </li>
                         <li>
-                            <h4>Pink Floyd</h4>
+                            <h4>
+                                The Piper at the Gate of Dawn {" • "} Pink Floyd
+                            </h4>
                         </li>
                         <li>
-                            <h4>King Crimson</h4>
+                            <h4>In Rainbows {" • "} Radiohead</h4>
+                        </li>
+                        <li>
+                            <h4>A Night At The Opera {" • "} Queen</h4>
+                        </li>
+                        <li>
+                            <h4>Remain in Light {" • "} Talking Heads</h4>
                         </li>
                     </ul>
                 </div>
@@ -89,7 +100,7 @@ const AboutPage = () => {
                     </ul>
                 </div>
                 <div className={style.block}>
-                    <h2>My guitar</h2>
+                    <h2>My guitars 🎸</h2>
                     <ul>
                         <li>
                             <h4>Chinese Unknown Brand Acoustic</h4>
@@ -140,11 +151,13 @@ const AboutPage = () => {
                     <br />
                     <p>Because life is all about learning and growing up.</p>
                 </div>
+                <hr />
             </div>
-            <hr />
-            <h1>Credit where it's due</h1>
-            <Credit />
+            <div className={style.credit}>
+                <h1>Credit where it's due</h1>
+                <Credit />
+            </div>
         </Layout>
-    )
-}
-export default AboutPage
+    );
+};
+export default AboutPage;

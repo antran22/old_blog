@@ -1,24 +1,25 @@
-import React, { useState } from "react"
-import { graphql, Link } from "gatsby"
-import * as PropTypes from "prop-types"
-import { Pagination } from "antd"
+import React, { useState } from 'react';
+import { graphql, Link } from 'gatsby';
+import * as PropTypes from 'prop-types';
+import { Pagination } from 'antd';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import style from "./index.module.css"
-import Info from "../components/info"
-import TagList from "../components/tagList"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import style from './index.module.css';
+import Info from '../components/info';
+import TagList from '../components/tagList';
 
 const PageEntry = ({ post }) => {
-    const { title, keyword, date, description } = post.frontmatter
+    const { title, keyword, date, description } = post.frontmatter;
     return (
         <>
-            <div className={style["blogPostPreview"]} key={post.id}>
+            <div className={style['blogPostPreview']} key={post.id}>
                 <h2>
-                    <Link to={post.fields["slug"]}>{title}</Link>
+                    <Link to={post.fields['slug']}>{title}</Link>
                 </h2>
                 <i>
-                    {new Date(date).toDateString()}{" • "}
+                    {new Date(date).toDateString()}
+                    {' • '}
                     {post.fields.readingTime.text}
                 </i>
                 <br />
@@ -30,23 +31,23 @@ const PageEntry = ({ post }) => {
             </div>
             <hr />
         </>
-    )
-}
+    );
+};
 
 function IndexPage({ data }) {
-    let { edges: posts } = data["allMarkdownRemark"]
-    posts = posts.filter(post => post.node.frontmatter.title.length > 0)
-    const [page, setPage] = useState(1)
+    let { edges: posts } = data['allMarkdownRemark'];
+    posts = posts.filter(post => post.node.frontmatter.title.length > 0);
+    const [page, setPage] = useState(1);
     return (
         <Layout>
             <SEO
                 title="Home"
                 keywords={[
-                    "programming",
-                    "music",
-                    "blogging",
-                    "guitar",
-                    "developer",
+                    'programming',
+                    'music',
+                    'blogging',
+                    'guitar',
+                    'developer',
                 ]}
             />
             <Info />
@@ -62,12 +63,12 @@ function IndexPage({ data }) {
                 onChange={page => setPage(page)}
             />
         </Layout>
-    )
+    );
 }
 
-IndexPage.propTypes = { data: PropTypes.any }
+IndexPage.propTypes = { data: PropTypes.any };
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
     query IndexQuery {
@@ -90,4 +91,4 @@ export const pageQuery = graphql`
             }
         }
     }
-`
+`;

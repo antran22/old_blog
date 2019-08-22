@@ -1,24 +1,24 @@
-import React from "react"
-import Layout from "../layout"
-import { graphql, Link } from "gatsby"
-import SEO from "../seo"
-import NavBar from "./navbar"
-import style from "./style.module.css"
+import React from 'react';
+import Layout from '../layout';
+import { graphql, Link } from 'gatsby';
+import SEO from '../seo';
+import NavBar from './navbar';
+import style from './style.module.css';
 
 function SeriesLink({ context }) {
     if (context.series)
         return (
             <i>
-                This post is a part of{" "}
+                This post is a part of{' '}
                 <Link to={context.series}>this series</Link>
             </i>
-        )
-    return <div />
+        );
+    return <div />;
 }
 
 export default function Template({ data, pageContext }) {
-    const { markdownRemark: post } = data
-    const time = new Date(post.frontmatter.date)
+    const { markdownRemark: post } = data;
+    const time = new Date(post.frontmatter.date);
     return (
         <>
             <Layout>
@@ -32,15 +32,15 @@ export default function Template({ data, pageContext }) {
                     <i>{time.toDateString()}</i>
                 </div>
                 <SeriesLink context={pageContext} />
-                <br/>
-                <br/>
+                <br />
+                <br />
                 <hr />
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
                 <hr />
                 <NavBar newer={pageContext.newer} older={pageContext.older} />
             </Layout>
         </>
-    )
+    );
 }
 export const query = graphql`
     query($path: String!) {
@@ -57,4 +57,4 @@ export const query = graphql`
             }
         }
     }
-`
+`;

@@ -1,9 +1,9 @@
-import React from "react"
-import { Avatar } from "antd"
-import { Link } from "gatsby"
+import React from 'react';
+import { Avatar } from 'antd';
+import { Link } from 'gatsby';
 
-import style from "./style.module.css"
-import avatar from "../../images/avatar.jpg"
+import style from './style.module.css';
+import avatar from '../../images/avatar.jpg';
 
 const About = () => {
     return (
@@ -23,6 +23,6 @@ const About = () => {
                 </h4>
             </div>
         </div>
-    )
-}
-export default About
+    );
+};
+export default About;

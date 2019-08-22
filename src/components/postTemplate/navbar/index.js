@@ -1,19 +1,19 @@
-import React from "react"
-import { Link } from "gatsby"
-import style from "./navbar.module.css"
+import React from 'react';
+import { Link } from 'gatsby';
+import style from './navbar.module.css';
 const LinkTo = ({ node, className, children }) => {
     if (node)
         return (
             <div className={className}>
-                <Link to={node.fields["slug"]}>
+                <Link to={node.fields['slug']}>
                     {children}
                     <br />
                     {node.frontmatter.title}
                 </Link>
             </div>
-        )
-    return null
-}
+        );
+    return null;
+};
 const NavBar = ({ older, newer }) => {
     return (
         <div className={style.navbar}>
@@ -24,6 +24,6 @@ const NavBar = ({ older, newer }) => {
                 Newer Post
             </LinkTo>
         </div>
-    )
-}
-export default NavBar
+    );
+};
+export default NavBar;
