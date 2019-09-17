@@ -58,3 +58,7 @@ hr {
 body * {
     transition: color 0.5s linear, background-color 0.5s linear !important;
 }
+
+.link-class {
+    color: var(--textTitle)
+}

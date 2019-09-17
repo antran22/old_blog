@@ -1,15 +1,15 @@
-import React from 'react';
-import Layout from '../layout';
-import { graphql, Link } from 'gatsby';
-import SEO from '../seo';
-import NavBar from './navbar';
-import style from './style.module.css';
+import React from "react";
+import Layout from "../layout";
+import { graphql, Link } from "gatsby";
+import SEO from "../seo";
+import NavBar from "./navbar";
+import style from "./style.module.css";
 
 function SeriesLink({ context }) {
     if (context.series)
         return (
             <i>
-                This post is a part of{' '}
+                This post is a part of{" "}
                 <Link to={context.series}>this series</Link>
             </i>
         );
@@ -35,6 +35,11 @@ export default function Template({ data, pageContext }) {
                 <br />
                 <br />
                 <hr />
+                <h2>Table of content</h2>
+                <div
+                    dangerouslySetInnerHTML={{ __html: post.tableOfContents }}
+                />
+                <hr />
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
                 <hr />
                 <NavBar newer={pageContext.newer} older={pageContext.older} />
@@ -55,6 +60,7 @@ export const query = graphql`
             fields {
                 slug
             }
+            tableOfContents(maxDepth: 2)
         }
     }
 `;

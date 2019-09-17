@@ -3,7 +3,7 @@ module.exports = {
         title: `A Moon Shaped Blog`,
         description: `a learner's journal`,
         author: `aldermann`,
-        siteUrl: 'https://aldermann.github.io',
+        siteUrl: "https://aldermann.github.io",
     },
     plugins: [
         `gatsby-remark-reading-time`,
@@ -13,7 +13,7 @@ module.exports = {
                 pathToConfigModule: `src/utils/typography`,
             },
         },
-        'gatsby-plugin-antd',
+        "gatsby-plugin-antd",
         `gatsby-plugin-react-helmet`,
         {
             resolve: `gatsby-source-filesystem`,
@@ -26,14 +26,18 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,
             options: {
                 path: `${__dirname}/src/posts/`,
-                name: 'pages',
+                name: "pages",
             },
         },
-        'gatsby-plugin-react-svg',
+        "gatsby-plugin-react-svg",
         {
             resolve: `gatsby-transformer-remark`,
             options: {
                 plugins: [
+                    {
+                        resolve: `gatsby-remark-autolink-headers`,
+                        className: `link-class`,
+                    },
                     {
                         resolve: `gatsby-remark-katex`,
                         options: {
@@ -41,7 +45,7 @@ module.exports = {
                         },
                     },
                     {
-                        resolve: 'gatsby-remark-embed-video',
+                        resolve: "gatsby-remark-embed-video",
                         options: {
                             width: 800,
                             ratio: 1.77,
@@ -59,8 +63,8 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-prismjs`,
                         options: {
-                            classPrefix: 'language-',
-                            inlineCodeMarker: '~',
+                            classPrefix: "language-",
+                            inlineCodeMarker: "~",
                             aliases: {},
                             showLineNumbers: true,
                             noInlineHighlight: false,
@@ -83,8 +87,8 @@ module.exports = {
                 icon: `src/images/icon.png`,
             },
         },
-        'gatsby-plugin-offline',
-        'gatsby-plugin-sitemap',
-        'gatsby-plugin-robots-txt',
+        "gatsby-plugin-offline",
+        "gatsby-plugin-sitemap",
+        "gatsby-plugin-robots-txt",
     ],
 };
