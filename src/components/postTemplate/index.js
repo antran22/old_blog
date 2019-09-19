@@ -37,6 +37,7 @@ export default function Template({ data, pageContext }) {
                 <hr />
                 <h2>Table of content</h2>
                 <div
+                    className={style.toc}
                     dangerouslySetInnerHTML={{ __html: post.tableOfContents }}
                 />
                 <hr />
