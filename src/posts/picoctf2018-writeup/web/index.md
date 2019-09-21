@@ -1,7 +1,7 @@
 ---
 date: 2019-09-17 23:12:00
-title: PicoCTF 2018 Writeup Part 3.
-description: Web Exploitation.
+title: PicoCTF 2018 Writeup Web Exploitation.
+description: No Facebook hacking tutorial though.
 keyword:
     - ctf
     - hacking

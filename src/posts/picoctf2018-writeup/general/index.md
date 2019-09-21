@@ -1,7 +1,7 @@
 ---
 date: 2019-05-02 18:07:00
-title: PicoCTF 2018 Writeup Part 1.
-description: General Skills.
+title: PicoCTF 2018 Writeup General Skills.
+description: Basic stuff I guess.
 keyword:
     - ctf
     - hacking

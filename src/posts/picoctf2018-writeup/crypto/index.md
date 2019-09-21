@@ -1,7 +1,7 @@
 ---
 date: 2019-05-04 21:40:00
-title: PicoCTF 2018 Writeup Part 2.
-description: Cryptography.
+title: PicoCTF 2018 Writeup Cryptography.
+description: Math and stuff.
 keyword:
     - ctf
     - hacking
