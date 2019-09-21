@@ -9,6 +9,9 @@ import style from './index.module.css';
 import Info from '../components/info';
 import TagList from '../components/tagList';
 
+const PAGE_SIZE = 10;
+
+
 const PageEntry = ({ post }) => {
     const { title, keyword, date, description } = post.frontmatter;
     return (
@@ -52,14 +55,14 @@ function IndexPage({ data }) {
             />
             <Info />
             <div>
-                {posts.slice((page - 1) * 5, page * 5).map(({ node: post }) => (
+                {posts.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE).map(({ node: post }) => (
                     <PageEntry key={post.id} post={post} />
                 ))}
             </div>
             <Pagination
                 className={style.pagination}
                 total={posts.length}
-                pageSize={5}
+                pageSize={PAGE_SIZE}
                 onChange={page => setPage(page)}
             />
         </Layout>
