@@ -35,11 +35,14 @@ export default function Template({ data, pageContext }) {
                 <br />
                 <br />
                 <hr />
-                <h2>Table of content</h2>
-                <div
-                    className={style.toc}
-                    dangerouslySetInnerHTML={{ __html: post.tableOfContents }}
-                />
+                <div className={style.toc}>
+                    <h2>Table of content</h2>
+                    <div
+                        dangerouslySetInnerHTML={{
+                            __html: post.tableOfContents,
+                        }}
+                    />
+                </div>
                 <hr />
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
                 <hr />
