@@ -4,6 +4,7 @@ module.exports = {
         description: `a learner's journal`,
         author: `aldermann`,
         siteUrl: "https://aldermann.github.io",
+        googleSiteVerification: "bjStGawjwRRZV0p3SPZJcCriBVtlgsl_fVtH4h_3axM",
     },
     plugins: [
         `gatsby-remark-reading-time`,
