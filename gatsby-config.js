@@ -7,6 +7,7 @@ module.exports = {
         googleSiteVerification: "bjStGawjwRRZV0p3SPZJcCriBVtlgsl_fVtH4h_3axM",
     },
     plugins: [
+        `gatsby-plugin-netlify-cms`,
         `gatsby-remark-reading-time`,
         {
             resolve: `gatsby-plugin-typography`,
