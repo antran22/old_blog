@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://aldermann.github.io/works/this-is-another-test/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/you-know-damn-well-this-is-a-test/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/picoctf2019-writeup/general/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/picoctf2018-writeup/reversing/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/picoctf2018-writeup/forensic/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/picoctf2018-writeup/web/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/hackthebox-writeup/part1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/picoctf2018-writeup/crypto/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/picoctf2018-writeup/general/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/node_modules-to-big/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/blog-guide/blog-guide-10/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/blog-guide/blog-guide-9/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/blog-guide/blog-guide-8/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/blog-guide/blog-guide-7/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/blog-guide/blog-guide-5/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/blog-guide/blog-guide-6/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/blog-guide/blog-guide-3/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/blog-guide/blog-guide-4/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/blog-guide/blog-guide-2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/random_things/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/blog-guide/blog-guide-1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/works/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/picoctf2019-writeup/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/picoctf2018-writeup/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/hackthebox-writeup/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/blog-guide/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/series/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aldermann.github.io/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+</urlset>
