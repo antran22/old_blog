@@ -7,7 +7,7 @@ collections:
       folder: posts
       create: true
       format: yaml-frontmatter
-      path: "{{series}}/{{slug}}/index"
+      path: "{{series}}{{slug}}/index"
       media_folder: ''
       public_folder: ''
       fields:
@@ -19,6 +19,7 @@ collections:
             label: Series
             widget: string
             required: false
+            pattern: ['^[\w\d_]+\\$', "The series should be word and underscore and ended with \\"]
 
           - name: title
             label: Title
