@@ -4,25 +4,36 @@ public_folder: /assets
 collections:
     - name: blog
       label: Blog
-      folder: src/posts
+      folder: posts
       create: true
       format: yaml-frontmatter
+      path: "{{series}}/{{slug}}/index"
+      media_folder: ''
+      public_folder: ''
       fields:
           - name: date
             label: Date
             widget: datetime
+
+          - name: series
+            label: Series
+            widget: string
+
           - name: title
             label: Title
+
           - name: description
             label: Description
             widget: text
+
           - name: keyword
             label: Keywords
             widget: list
+
           - name: body
             label: Body
             widget: markdown
 backend:
     name: github
     repo: aldermann/aldermann.github.io
-    branch: develop
+    branch: publish
