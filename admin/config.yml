@@ -19,7 +19,7 @@ collections:
             label: Series
             widget: string
             required: false
-            pattern: ['^[\w\d_]+\\$', "The series should be word and underscore and ended with \\"]
+            pattern: ['^[\w\d_]+/$', "The series should be word and underscore and ended with /"]
 
           - name: title
             label: Title
@@ -32,6 +32,7 @@ collections:
           - name: keyword
             label: Keywords
             widget: list
+            required: false
 
           - name: body
             label: Body
