@@ -39,4 +39,6 @@ collections:
 backend:
     name: github
     repo: aldermann/aldermann.github.io
-    branch: publish
+    branch: develop
+publish_mode: editorial_workflow
+show_preview_links: false
