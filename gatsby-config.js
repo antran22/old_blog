@@ -1,12 +1,15 @@
+const config = require("./data/config.json");
+const path = require("path");
+
 module.exports = {
-    siteMetadata: {
-        title: `A Moon Shaped Blog`,
-        description: `a learner's journal`,
-        author: `aldermann`,
-        siteUrl: "https://aldermann.github.io",
-        googleSiteVerification: "bjStGawjwRRZV0p3SPZJcCriBVtlgsl_fVtH4h_3axM",
-    },
+    siteMetadata: config,
     plugins: [
+        {
+            resolve: "gatsby-plugin-root-import",
+            options: {
+                src: path.join(__dirname, "src"),
+            },
+        },
         `gatsby-plugin-netlify-cms`,
         `gatsby-remark-reading-time`,
         {
@@ -27,7 +30,7 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/posts`,
+                path: `${__dirname}/data/posts`,
                 name: "pages",
             },
         },

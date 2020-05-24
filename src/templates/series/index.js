@@ -1,20 +1,20 @@
-import React from 'react';
-import Layout from '../layout';
-import style from './style.module.css';
-import { Link } from 'gatsby';
-import TagList from '../tagList';
+import React from "react";
+import Layout from "src/components/layout";
+import style from "./style.module.css";
+import { Link } from "gatsby";
+import TagList from "src/components/tagList";
 
 const PageEntry = ({ post }) => {
     const { title, keyword, date, description } = post.frontmatter;
     return (
         <>
-            <div className={style['blogPostPreview']}>
+            <div className={style["blogPostPreview"]}>
                 <h2>
-                    <Link to={post.fields['slug']}>{title}</Link>
+                    <Link to={post.fields["slug"]}>{title}</Link>
                 </h2>
                 <i>
                     {new Date(date).toDateString()}
-                    {' • '}
+                    {" • "}
                     {post["fields"]["readingTime"]["text"]}
                 </i>
                 <br />

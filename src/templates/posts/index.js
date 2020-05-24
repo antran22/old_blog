@@ -1,34 +1,36 @@
 import React from "react";
-import Layout from "../layout";
+import Layout from "src/components/layout";
 import { graphql, Link } from "gatsby";
-import SEO from "../seo";
+import SEO from "src/components/seo";
 import NavBar from "./navbar";
 import style from "./style.module.css";
 
-function SeriesLink({ context }) {
-    if (context.series)
+const SeriesLink = ({ context }) => {
+    const { series } = context;
+    if (series)
         return (
-            <i>
-                This post is a part of{" "}
-                <Link to={context.series}>this series</Link>
-            </i>
+            <span>
+                <i>This post is a part of a series: </i>
+                <Link to={`/series/${series.slug}`}>{series.name}</Link>
+            </span>
         );
-    return <div />;
-}
+    return null;
+};
 
-export default function Template({ data, pageContext }) {
+const PostTemplate = ({ data, pageContext }) => {
     const { markdownRemark: post } = data;
-    const time = new Date(post.frontmatter.date);
+    const { frontmatter, tableOfContents } = post;
+    const time = new Date(frontmatter.date);
     return (
         <>
             <Layout>
                 <SEO
-                    title={post.frontmatter.title}
-                    keywords={post.frontmatter.keyword}
-                    description={post.frontmatter.description}
+                    title={frontmatter.title}
+                    keywords={frontmatter.keyword}
+                    description={frontmatter.description}
                 />
                 <div className={style.title}>
-                    <h1>{post.frontmatter.title}</h1>
+                    <h1>{frontmatter.title}</h1>
                     <i>{time.toDateString()}</i>
                 </div>
                 <SeriesLink context={pageContext} />
@@ -39,18 +41,21 @@ export default function Template({ data, pageContext }) {
                     <h2>Table of content</h2>
                     <div
                         dangerouslySetInnerHTML={{
-                            __html: post.tableOfContents,
+                            __html: tableOfContents,
                         }}
                     />
                 </div>
                 <hr />
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
                 <hr />
-                <NavBar newer={pageContext.newer} older={pageContext.older} />
+                <NavBar newer={pageContext.next} older={pageContext.previous} />
             </Layout>
         </>
     );
-}
+};
+
+export default PostTemplate;
+
 export const query = graphql`
     query($path: String!) {
         markdownRemark(fields: { slug: { eq: $path } }) {
