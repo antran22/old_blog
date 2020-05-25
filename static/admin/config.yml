@@ -17,7 +17,12 @@ collections:
 
       - name: series
         label: Series
-        widget: string
+        widget: relation
+        collection: site_configuration
+        file: series
+        valueField: series.*.name
+        searchFields:
+          - series.*.name
         required: false
 
       - name: title
