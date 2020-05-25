@@ -7,7 +7,7 @@ collections:
     folder: posts
     create: true
     format: yaml-frontmatter
-    path: "posts/{{slug}}/index"
+    path: "data/posts/{{slug}}/index"
     media_folder: ""
     public_folder: ""
     fields:
