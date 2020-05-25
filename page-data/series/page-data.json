@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-components-series-list-template-index-js","path":"/series/","webpackCompilationHash":"d504355b640fcb505357","result":{"pageContext":{"isCreatedByStatefulCreatePages":false,"series":[]}}}
+{"componentChunkName":"component---src-templates-series-list-index-js","path":"/series/","webpackCompilationHash":"b545ff6a39a82564d45f","result":{"pageContext":{"isCreatedByStatefulCreatePages":false,"seriesList":{"Machine learning":{"slug":"machine-learning","description":"This is a series about Machine Learning","posts":[]}}}}}
