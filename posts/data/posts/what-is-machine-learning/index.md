@@ -7,8 +7,8 @@ keyword:
   - machine_learning
   - blog
 ---
-\## What is machine learning
+## What is machine learning
 
-\## How can machine learning be applied
+## How can machine learning be applied
 
-\## Where to start
+## Where to start
