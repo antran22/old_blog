@@ -4,10 +4,10 @@ public_folder: /assets
 collections:
   - name: blog
     label: Blog
-    folder: posts
+    folder: data/posts
     create: true
     format: yaml-frontmatter
-    path: "data/posts/{{slug}}/index"
+    path: "{{slug}}/index"
     media_folder: ""
     public_folder: ""
     fields:
