@@ -12,87 +12,81 @@ import TagList from "../components/tagList";
 const PAGE_SIZE = 10;
 
 const PageEntry = ({ post }) => {
-    const { title, keyword, date, description } = post.frontmatter;
-    return (
-        <>
-            <div className={style["blogPostPreview"]} key={post.id}>
-                <h2>
-                    <Link to={post.fields["slug"]}>{title}</Link>
-                </h2>
-                <i>
-                    {new Date(date).toDateString()}
-                    {" • "}
-                    {post.fields.readingTime.text}
-                </i>
-                <br />
-                <br />
-                <TagList keyword={keyword} />
-                <br />
-                <br />
-                <h4>{description}</h4>
-            </div>
-            <hr />
-        </>
-    );
+  const { title, keyword, date, description } = post.frontmatter;
+  return (
+    <>
+      <div className={style["blogPostPreview"]} key={post.id}>
+        <h2>
+          <Link to={post.fields["slug"]}>{title}</Link>
+        </h2>
+        <i>
+          {new Date(date).toDateString()}
+          {" • "}
+          {post.fields.readingTime.text}
+        </i>
+        <br />
+        <br />
+        <TagList keyword={keyword} />
+        <br />
+        <br />
+        <h4>{description}</h4>
+      </div>
+      <hr />
+    </>
+  );
 };
 
-function IndexPage({ data }) {
-    let { edges: posts } = data["allMarkdownRemark"];
-    posts = posts.filter(post => post.node.frontmatter.title.length > 0);
-    const [page, setPage] = useState(1);
-    return (
-        <Layout>
-            <SEO
-                title="Home"
-                keywords={[
-                    "programming",
-                    "music",
-                    "blogging",
-                    "guitar",
-                    "developer",
-                ]}
-            />
-            <Info />
-            <div>
-                {posts
-                    .slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
-                    .map(({ node: post }, idx) => (
-                        <PageEntry key={idx} post={post} />
-                    ))}
-            </div>
-            <Pagination
-                className={style.pagination}
-                total={posts.length}
-                pageSize={PAGE_SIZE}
-                onChange={page => setPage(page)}
-            />
-        </Layout>
-    );
-}
+const IndexPage = ({ data }) => {
+  let { edges: posts } = data["allMarkdownRemark"];
+  posts = posts.filter(post => post.node.frontmatter.title.length > 0);
+  const [page, setPage] = useState(1);
+  return (
+    <Layout>
+      <SEO
+        title="Home"
+        keywords={["programming", "music", "blogging", "guitar", "developer"]}
+      />
+      <Info />
+      <div>
+        {posts
+          .slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
+          .map(({ node: post }, idx) => (
+            <PageEntry key={idx} post={post} />
+          ))}
+      </div>
+      <Pagination
+        className={style.pagination}
+        total={posts.length}
+        pageSize={PAGE_SIZE}
+        onChange={page => setPage(page)}
+      />
+    </Layout>
+  );
+};
 
 IndexPage.propTypes = { data: PropTypes.any };
 
 export default IndexPage;
 
 export const pageQuery = graphql`
-    query IndexQuery {
-        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-            edges {
-                node {
-                    frontmatter {
-                        title
-                        date
-                        description
-                        keyword
-                    }
-                    fields {
-                        slug
-                        readingTime {
-                            text
-                        }
-                    }
-                }
+  query IndexQuery {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            date
+            description
+            keyword
+          }
+          fields {
+            slug
+            readingTime {
+              text
             }
+          }
         }
+      }
     }
+  }
 `;

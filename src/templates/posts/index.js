@@ -69,7 +69,7 @@ export const query = graphql`
             fields {
                 slug
             }
-            tableOfContents(maxDepth: 2)
+            tableOfContents(maxDepth: 3)
         }
     }
 `;

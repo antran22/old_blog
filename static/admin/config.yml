@@ -7,7 +7,7 @@ collections:
     folder: posts
     create: true
     format: yaml-frontmatter
-    path: "posts/{{slug}}/index"
+    path: "data/posts/{{slug}}/index"
     media_folder: ""
     public_folder: ""
     fields:
@@ -15,8 +15,8 @@ collections:
         label: Date
         widget: datetime
 
-      - name: collections
-        label: Collections
+      - name: series
+        label: Series
         widget: string
         required: false
 
